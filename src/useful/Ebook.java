@@ -20,7 +20,7 @@ public class Ebook {
 
 	// Object 클래스에 있는 메서드를 재정의
 	@Override
-	private boolean equals(Object obj) {
+	public boolean equals(Object obj) {
 		// 1. Ebook 클래스의 인스턴스가 맞다면
 		if (obj instanceof Ebook) {
 			Ebook tbook = (Ebook) obj;
