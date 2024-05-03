@@ -75,7 +75,7 @@ public class LottoFrame extends JFrame implements ActionListener{
 //			g.drawString(getNumbers[2] + " ", 100, 300);
 //			g.drawString(getNumbers[3] + " ", 100, 300);
 //			g.drawString(getNumbers[4] + " ", 100, 300);
-//			   g.drawString(getNumbers[5] + " ", 100, 300);
+//			g.drawString(getNumbers[5] + " ", 100, 300);
 			
 		}
 		
