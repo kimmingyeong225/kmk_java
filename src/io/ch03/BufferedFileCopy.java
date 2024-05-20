@@ -1,5 +1,6 @@
 package io.ch03;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,7 +20,8 @@ public class BufferedFileCopy {
 		
 		try(	FileInputStream in = new FileInputStream(sourceFilePath);
 				FileOutputStream out = new FileOutputStream(destinationFilePath);
-				BufferedOutputStream ff = new BufferedOutputStream(out)
+				BufferedInputStream fin = new BufferedInputStream(in); // out만 적으면 안되고 in, out 둘 다 적어줘야 됨
+				BufferedOutputStream fout = new BufferedOutputStream(out)
 				){
 			
 			//byte[] bytes = data.getBytes();
@@ -28,6 +30,8 @@ public class BufferedFileCopy {
 			while((data = in.read()) != -1) {
 				out.write(data);
 			}
+			fout.flush(); // flush <- 이거 해주기!
+			// 매번 입출력을 발생하는 것이 아니라 한번에 입출력을사용
 			System.out.println("입력스트림--> 출력스트림--> 입력--> 출력 에 반복 완료");
 			
 		} catch (Exception e) {
